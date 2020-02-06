@@ -1,0 +1,309 @@
+
+#chart{
+    margin-top: 50px;
+}
+#chart>div{
+    overflow: auto;
+}
+
+.person{
+    border: 1px solid #2b6097;
+    text-align: center;
+    background-color: white;
+}
+
+.position{
+    background-color: #E6F0FA;
+    color: #333;
+    padding: 0.9em 0px;
+    font-weight: bold;
+     
+}
+.pinfo{
+    padding: 0.9em 0px;
+
+}
+.pinfo p{
+    margin: 0.3em 0;
+  
+    line-height: normal;
+}
+
+.pname{
+    color: #0c69d0!important;
+}
+
+#chief,
+#midline{
+    position: relative;
+    width: 690px;
+    margin: auto;
+    
+}
+
+#chief .person::before,
+#chief .person::after{
+    content: "";
+    width: 35px;
+    height: 1px;
+    background-color: #aaa;
+    display: block;
+    position: absolute;
+    top: 50%;
+
+}
+
+#chief .person::before{
+    left: -36px;
+}
+#chief .person::after{
+    right: -36px;
+}
+
+#chief .person{
+    width: 300px;
+    margin: auto;
+    position: relative;
+    
+    
+}
+
+#staff .person{
+    width: calc((100% - 60px) / 5);
+    float: left;
+    margin-right: 15px;
+    position: relative;
+    
+}
+#staff {
+    padding-top: 20px;
+    position: relative;
+    padding-bottom: 90px;
+    overflow-y: auto;
+    overflow-x: hidden!important;
+}
+#staff::before{
+    content: "";
+    display: block;
+    height: 1px;
+    left: calc((100% - 60px) / 10);
+    right: calc(((100% - 60px) / 10) - 1px);
+    top: 0px;
+    background-color: #aaa;
+    position: absolute;
+}
+
+#staff .person::before{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    background-color: #aaa;
+    
+    
+}
+
+#staff .person:last-of-type{
+   
+    margin-right: 0px;
+    
+    
+}
+
+.officer{
+    border: 1px solid #aaa;
+    background-color: #F5F5F5;
+    padding: 1em 0em;
+    text-align: center;
+    width:160px;
+    
+}
+.moniter,
+.advisor,
+.council {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.moniter {left: 0;}
+.advisor,
+.council {right: 0;}
+
+
+
+#midline{
+    height: 100px;
+}
+
+.council:before{
+    content: "";
+    display: block;
+    width: 185px;
+    height: 1px;
+    background-color: #aaa;
+    position: absolute;
+    top: 50%;
+    left: -185px;
+}
+
+.council:after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100px;
+    background-color: #aaa;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -186px;
+}
+
+.indust{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    
+}
+.indust::before{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 20px;
+    background-color: #aaa;
+    position: absolute;
+    left: 50%;
+    top: -20px;
+}
+
+#tc_join{
+    padding: 10px;
+
+}
+
+
+@media all and (max-width:720px){
+    
+    
+    #chief,
+    #midline{
+        width: 100%;
+        
+    }
+    
+    #chief .person {
+        width: 100%;
+    }
+    #staff {
+        padding-top: 0px;
+    }
+    
+    #staff .person {
+        width: calc(100% - 20px);
+        float:none;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    
+    #chief .person::after,
+    #chief .person::before,
+    #staff{
+        content: none;
+    }
+    
+    #chief::after{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1px;
+        top: 0px;
+        bottom: 0px;
+        background: #AAA;
+        left: 10px;
+        z-index: -1;
+
+    }
+    .moniter,
+    .advisor{
+        position: relative;
+        transform: none;
+        margin-left: 20px;
+        float: left;
+        margin-top: 20px;
+        width: 120px;
+    }
+    .moniter::before,
+    .advisor::before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        background-color: #aaa;
+        left: 50%;
+        top: -21px;
+    }
+    .council{
+        position: relative;
+        margin-left: 20px;
+    }
+    .council::after{
+        left: -11px;
+    }
+    .council::before{
+        
+        width: 10px;
+        left: -11px;
+        
+    }
+    #staff::before{
+        
+        content: none;
+    }
+
+    #staff .person::before{
+        content: none;
+    }
+
+
+    #staff .person::before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(-50% + -21px);
+/*        transform: translateY(50%);*/
+        width: 1px;
+        height: calc(100% + 21px);
+        left: -11px;
+        background-color: #aaa;
+    }
+    #staff .person::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        height: 1px;
+        width: 10px;
+        background-color: #aaa;
+        left: -11px;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
